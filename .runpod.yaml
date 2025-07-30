@@ -1,0 +1,85 @@
+# ⬇️ IMPORTANT: REPLACE THIS TAG with the unique tag you pushed to Docker Hub
+image: ballaj5/hodlbotv4.f:20250728-105900
+gpu: true
+
+ports:
+  - containerPort: 8050
+  - containerPort: 8888
+
+volumeMounts:
+  - mountPath: /workspace/data
+    name: data-volume
+  - mountPath: /workspace/models
+    name: model-volume
+  - mountPath: /workspace/logs
+    name: log-volume
+  - mountPath: /workspace/db
+    name: db-volume
+  - mountPath: /workspace/config
+    name: config-volume
+  - mountPath: /workspace/env
+    name: env-volume
+  - mountPath: /workspace/cache
+    name: cache-volume
+
+env:
+  # ⬇️ IMPORTANT: Paste your complete list of environment variables here
+  - name: DB_HOST
+    value: db
+  - name: DB_PORT
+    value: "5432"
+  - name: DB_NAME
+    value: crypto_signals
+  - name: DB_USER
+    value: crypto_user
+  - name: LLAMA_MODEL_PATH
+    value: /workspace/models/llama-model.gguf
+  - name: LLM_BACKEND
+    value: llama
+  - name: LLM_COMMENTARY
+    value: "true"
+  - name: LLAMA_CONTEXT_SIZE
+    value: "8192"
+  - name: LLAMA_TEMPERATURE
+    value: "0.7"
+  - name: LLAMA_TOP_K
+    value: "40"
+  - name: LLAMA_TOP_P
+    value: "0.95"
+  - name: RETRAIN_INTERVAL_MINUTES
+    value: "360"
+  # Remember to set your secrets (DB_PASS, API keys, etc.) in the Runpod UI
+
+startCommand: |
+  bash -c '
+    set -euo pipefail
+    echo "--- 🚀 Direct Bootstrap Initialized ---"
+
+    echo "Validating environment variables..."
+    if [[ -z "${DB_HOST:-}" || -z "${TELEGRAM_BOT_TOKEN:-}" || -z "${BYBIT_API_KEY:-}" ]]; then
+        echo "❌ Critical environment variables are missing. Please check your Runpod Secrets."
+        exit 1
+    else
+        echo "✅ Critical environment variables are present."
+    fi
+
+    echo "Validating LLaMA model path..."
+    if [[ ! -f "$LLAMA_MODEL_PATH" ]]; then
+        echo "⚠️ LLaMA model not found. Attempting to run download script..."
+        bash /workspace/scripts/download_llama_model.sh
+    fi
+    echo "✅ LLaMA model is ready."
+
+    echo "--- Launching Application Services ---"
+    echo "🚀 Launching background scheduler..."
+    python -m src.scheduler.retrain_scheduler &
+
+    echo "🚀 Launching real-time feature manager..."
+    python -m src.data_fetch.realtime_manager &
+
+    echo "🚀 Launching main dashboard via Streamlit..."
+    streamlit run /workspace/src/dashboard/app.py --server.port 8050 &
+
+    echo "--- ✅ All systems are go. Container is running. ---"
+    wait -n
+  '

@@ -1,0 +1,31 @@
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Python artifacts
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+pip-wheel-metadata/
+
+# Virtual environment
+venv/
+.venv/
+
+# Large data, models, and logs
+# These should be on persistent storage, not in the git repo.
+data/
+models/
+models_data/
+logs/
+*.log
+*.db
+*.sqlite3
+
+# IDE and OS-specific files
+.idea/
+.vscode/
+desktop.ini

@@ -1,0 +1,171 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 90B done
+#1 DONE 0.0s
+
+#2 [auth] library/ubuntu:pull token for registry-1.docker.io
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/ubuntu:22.04
+#3 DONE 1.1s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 691B done
+#4 DONE 0.0s
+
+#5 [1/4] FROM docker.io/library/ubuntu:22.04@sha256:1ec65b2719518e27d4d25f104d93f9fac60dc437f81452302406825c46fcc9cb
+#5 resolve docker.io/library/ubuntu:22.04@sha256:1ec65b2719518e27d4d25f104d93f9fac60dc437f81452302406825c46fcc9cb 0.0s done
+#5 DONE 0.0s
+
+#6 [2/4] WORKDIR /debug
+#6 CACHED
+
+#7 [internal] load build context
+#7 transferring context: 2.73kB 0.0s done
+#7 DONE 0.0s
+
+#8 [3/4] COPY . .
+#8 DONE 0.0s
+
+#9 [4/4] RUN ls -laR
+#9 0.220 .:
+#9 0.220 total 40
+#9 0.220 drwxr-xr-x 1 root root 4096 Jul 29 00:14 .
+#9 0.220 drwxr-xr-x 1 root root 4096 Jul 29 00:14 ..
+#9 0.220 -rwxr-xr-x 1 root root  892 Jul 27 15:01 .env.example
+#9 0.220 -rwxr-xr-x 1 root root 2440 Jul 28 20:09 .runpod.yaml
+#9 0.220 -rwxr-xr-x 1 root root    0 Jul 19 09:25 =
+#9 0.220 -rwxr-xr-x 1 root root    0 Jul 19 09:25 CACHED
+#9 0.220 -rwxr-xr-x 1 root root    0 Jul 19 09:25 CANCELED
+#9 0.220 -rwxr-xr-x 1 root root 2428 Jul 27 21:52 Makefile
+#9 0.220 -rwxr-xr-x 1 root root    0 Jul 19 09:25 [auth]
+#9 0.220 -rwxr-xr-x 1 root root    0 Jul 19 09:25 [builder
+#9 0.220 -rwxr-xr-x 1 root root    0 Jul 19 09:25 [internal]
+#9 0.220 -rwxr-xr-x 1 root root    0 Jul 19 09:25 [stage-1
+#9 0.220 -rwxr-xr-x 1 root root  317 Jul 29 00:13 build_log.txt
+#9 0.220 -rwxr-xr-x 1 root root  530 Jul 23 03:40 requirements.txt
+#9 0.220 -rwxr-xr-x 1 root root    0 Jul 19 09:25 resolve
+#9 0.220 dr-xr-xr-x 2 root root 4096 Jul 27 22:33 scripts
+#9 0.220 dr-xr-xr-x 9 root root 4096 Jul 27 22:33 src
+#9 0.220 dr-xr-xr-x 3 root root 4096 Jul 24 09:42 tests
+#9 0.220 -rwxr-xr-x 1 root root    0 Jul 19 09:25 transferring
+#9 0.220 
+#9 0.220 ./scripts:
+#9 0.220 total 44
+#9 0.220 dr-xr-xr-x 2 root root 4096 Jul 27 22:33 .
+#9 0.220 drwxr-xr-x 1 root root 4096 Jul 29 00:14 ..
+#9 0.220 -rwxr-xr-x 1 root root 1470 Jul 27 22:32 clean_docker.sh
+#9 0.220 -rwxr-xr-x 1 root root  244 Jul 18 06:20 desktop.ini
+#9 0.220 -rwxr-xr-x 1 root root 1445 Jul 27 09:00 download_llama_model.sh
+#9 0.220 -rwxr-xr-x 1 root root  606 Jul 27 22:16 run-local.sh
+#9 0.220 -rwxr-xr-x 1 root root  358 Jul 27 22:16 runpod-bootstrap.sh
+#9 0.220 -rwxr-xr-x 1 root root 2664 Jul 27 22:22 start.sh
+#9 0.220 -rwxr-xr-x 1 root root  751 Jul 27 22:32 test-local.sh
+#9 0.220 -rwxr-xr-x 1 root root 5011 Jul 27 22:23 train_model.py
+#9 0.220 
+#9 0.220 ./src:
+#9 0.220 total 56
+#9 0.220 dr-xr-xr-x 9 root root 4096 Jul 27 22:33 .
+#9 0.220 drwxr-xr-x 1 root root 4096 Jul 29 00:14 ..
+#9 0.220 -rwxr-xr-x 1 root root 2008 Jul 27 09:28 config.py
+#9 0.220 drwxr-xr-x 2 root root 4096 Jul 27 22:33 core
+#9 0.220 drwxr-xr-x 3 root root 4096 Jul 27 22:33 dashboard
+#9 0.220 drwxr-xr-x 2 root root 4096 Jul 27 22:33 data_fetch
+#9 0.220 -rwxr-xr-x 1 root root  114 Jul 18 06:24 desktop.ini
+#9 0.220 drwxr-xr-x 2 root root 4096 Jul 27 23:07 llm
+#9 0.220 -rwxr-xr-x 1 root root 1214 Jul 26 04:47 logger.py
+#9 0.220 drwxr-xr-x 2 root root 4096 Jul 27 23:07 scheduler
+#9 0.220 drwxr-xr-x 2 root root 4096 Jul 26 08:27 shared
+#9 0.220 drwxr-xr-x 2 root root 4096 Jul 27 09:36 telegram
+#9 0.220 -rwxr-xr-x 1 root root 6010 Jul 27 21:53 trade_loop.py
+#9 0.220 
+#9 0.220 ./src/core:
+#9 0.220 total 28
+#9 0.220 drwxr-xr-x 2 root root 4096 Jul 27 22:33 .
+#9 0.220 dr-xr-xr-x 9 root root 4096 Jul 27 22:33 ..
+#9 0.220 -rwxr-xr-x 1 root root 5027 Jul 27 22:07 db_manager.py
+#9 0.220 -rwxr-xr-x 1 root root 1385 Jul 24 10:43 model_validator.py
+#9 0.220 -rwxr-xr-x 1 root root 2510 Jul 27 22:07 order_executor.py
+#9 0.220 -rwxr-xr-x 1 root root 1195 Jul 26 08:14 signal_parser.py
+#9 0.220 
+#9 0.220 ./src/dashboard:
+#9 0.220 total 24
+#9 0.220 drwxr-xr-x 3 root root 4096 Jul 27 22:33 .
+#9 0.220 dr-xr-xr-x 9 root root 4096 Jul 27 22:33 ..
+#9 0.220 -rwxr-xr-x 1 root root 4920 Jul 27 21:53 app.py
+#9 0.220 drwxr-xr-x 2 root root 4096 Jul 27 22:33 components
+#9 0.220 -rwxr-xr-x 1 root root 3800 Jul 27 21:53 performance_metrics.py
+#9 0.220 
+#9 0.220 ./src/dashboard/components:
+#9 0.220 total 8
+#9 0.220 drwxr-xr-x 2 root root 4096 Jul 27 22:33 .
+#9 0.220 drwxr-xr-x 3 root root 4096 Jul 27 22:33 ..
+#9 0.220 
+#9 0.220 ./src/data_fetch:
+#9 0.220 total 24
+#9 0.220 drwxr-xr-x 2 root root 4096 Jul 27 22:33 .
+#9 0.220 dr-xr-xr-x 9 root root 4096 Jul 27 22:33 ..
+#9 0.220 -rwxr-xr-x 1 root root 2461 Jul 27 22:30 data_source.py
+#9 0.220 -rwxr-xr-x 1 root root 2663 Jul 27 22:30 fetch_futures_data.py
+#9 0.220 -rwxr-xr-x 1 root root 4361 Jul 27 09:26 realtime_manager.py
+#9 0.220 
+#9 0.220 ./src/llm:
+#9 0.220 total 28
+#9 0.220 drwxr-xr-x 2 root root 4096 Jul 27 23:07 .
+#9 0.220 dr-xr-xr-x 9 root root 4096 Jul 27 22:33 ..
+#9 0.220 -rwxr-xr-x 1 root root 2230 Jul 27 22:06 data_utils.py
+#9 0.220 -rwxr-xr-x 1 root root 3405 Jul 27 22:09 prepare_external_finetune_data.py
+#9 0.220 -rwxr-xr-x 1 root root 3872 Jul 27 22:09 prepare_finetune_data.py
+#9 0.220 -rwxr-xr-x 1 root root 4660 Jul 27 22:53 service.py
+#9 0.220 
+#9 0.220 ./src/scheduler:
+#9 0.220 total 12
+#9 0.220 drwxr-xr-x 2 root root 4096 Jul 27 23:07 .
+#9 0.220 dr-xr-xr-x 9 root root 4096 Jul 27 22:33 ..
+#9 0.220 -rwxr-xr-x 1 root root 3085 Jul 27 22:54 retrain_scheduler.py
+#9 0.220 
+#9 0.220 ./src/shared:
+#9 0.220 total 12
+#9 0.220 drwxr-xr-x 2 root root 4096 Jul 26 08:27 .
+#9 0.220 dr-xr-xr-x 9 root root 4096 Jul 27 22:33 ..
+#9 0.220 -rwxr-xr-x 1 root root  884 Jul 26 07:48 constants.py
+#9 0.220 
+#9 0.220 ./src/telegram:
+#9 0.220 total 16
+#9 0.220 drwxr-xr-x 2 root root 4096 Jul 27 09:36 .
+#9 0.220 dr-xr-xr-x 9 root root 4096 Jul 27 22:33 ..
+#9 0.220 -rwxr-xr-x 1 root root 5144 Jul 27 09:27 send_alert.py
+#9 0.220 
+#9 0.220 ./tests:
+#9 0.220 total 32
+#9 0.220 dr-xr-xr-x 3 root root 4096 Jul 24 09:42 .
+#9 0.220 drwxr-xr-x 1 root root 4096 Jul 29 00:14 ..
+#9 0.220 drwxr-xr-x 2 root root 4096 Jul 24 09:43 core
+#9 0.220 -rwxr-xr-x 1 root root   82 Jul 18 06:09 desktop.ini
+#9 0.220 -rwxr-xr-x 1 root root  774 Jul 27 22:26 llm_test.py
+#9 0.220 -rwxr-xr-x 1 root root 1081 Jul 27 22:26 test_data_source.py
+#9 0.220 -rwxr-xr-x 1 root root 3074 Jul 27 22:18 test_llm_alert.py
+#9 0.220 -rwxr-xr-x 1 root root 1823 Jul 27 09:24 test_pipeline.py
+#9 0.220 
+#9 0.220 ./tests/core:
+#9 0.220 total 24
+#9 0.220 drwxr-xr-x 2 root root 4096 Jul 24 09:43 .
+#9 0.220 dr-xr-xr-x 3 root root 4096 Jul 24 09:42 ..
+#9 0.220 -rwxr-xr-x 1 root root 2822 Jul 27 22:26 test_db_manager.py
+#9 0.220 -rwxr-xr-x 1 root root 2278 Jul 24 09:43 test_model_validator.py
+#9 0.220 -rwxr-xr-x 1 root root 2846 Jul 27 22:26 test_order_executor.py
+#9 0.220 -rwxr-xr-x 1 root root 2947 Jul 24 09:43 test_signal_parser.py
+#9 DONE 0.2s
+
+#10 exporting to image
+#10 exporting layers 0.1s done
+#10 exporting manifest sha256:e944c800e9d2f36bcc3fd4a1d5cd6b4fbe2cc0ce137440a0ece1331bb1d07c02 done
+#10 exporting config sha256:5e509da451b0de64afcf5a712a89046bcb57b7d99229466bc93cf2748ec56967 done
+#10 exporting attestation manifest sha256:16063fb7bb6fbce917012010d999d6473de9a7feefda30b20e35b611b914960a 0.0s done
+#10 exporting manifest list sha256:f531fcbc19a93b29d465628968303421e12bdffbe2c1d6db1c8137677aecc1c3 done
+#10 naming to docker.io/library/debug-build:latest done
+#10 unpacking to docker.io/library/debug-build:latest 0.0s done
+#10 DONE 0.2s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/jpkitqjydew2rnmp9snn95wnv

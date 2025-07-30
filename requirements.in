@@ -1,0 +1,36 @@
+# src/requirements.in
+
+# --- Core ML & Data Science ---
+numpy
+pandas
+scikit-learn
+xgboost
+ta
+
+# --- LLM & AI ---
+# For GPU, install with: CMAKE_ARGS="-DLLAMA_CUBLAS=on" FORCE_CMAKE=1 pip install llama-cpp-python
+llama-cpp-python
+openai
+transformers
+datasets
+
+# --- Database ---
+psycopg2-binary
+sqlalchemy
+
+# --- APIs & Web ---
+ccxt
+ccxt[pro]
+requests
+python-telegram-bot[ext]
+
+# --- Application & Dashboard ---
+streamlit
+plotly
+apscheduler
+python-dotenv
+tenacity
+
+# --- Testing ---
+pytest
+pytest-asyncio

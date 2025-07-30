@@ -1,0 +1,52 @@
+# Git and Docker configuration
+.git
+.gitignore
+.dockerignore
+Dockerfile
+docker-compose.yml
+
+# Python artifacts
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+pip-wheel-metadata/
+
+# Virtual environment
+venv/
+.venv/
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Large data, models, and log files
+# These should be mounted as volumes, not built into the image.
+data/
+models/
+models_data/
+logs/
+*.log
+*.db
+*.sqlite3
+
+# IDE and OS-specific files
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+desktop.ini
+.__atomic-write*
+
+# Documentation and scripts
+README.md
+*.md
+build_and_push.sh
+*.in
+# Workspace files (if used for local development)
+workspace/

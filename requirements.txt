@@ -1,0 +1,38 @@
+# --- Core ML & Data Science ---
+numpy
+pandas
+scikit-learn
+xgboost
+ta
+
+# --- PyTorch for GPU (CUDA 12.1) ---
+# --extra-index-url https://download.pytorch.org/whl/cu121
+torch
+torchvision
+torchaudio
+
+# --- LLM & AI ---
+openai
+llama-cpp-python
+transformers
+accelerate
+datasets
+psycopg2-binary
+
+# --- APIs & Web ---
+ccxt
+requests
+python-telegram-bot[ext]
+
+# --- Application & Dashboard ---
+streamlit
+plotly
+apscheduler
+sqlalchemy
+python-dotenv
+loguru
+retrying
+pytz
+
+# --- Jupyter UI ---
+jupyterlab
